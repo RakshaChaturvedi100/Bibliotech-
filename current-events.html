@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Current Events | Bibliotech</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to right, #ede7f6, #f3e5f5);
+      color: #4a148c;
+    }
+
+    header {
+      background-color: #6a1b9a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+
+    .events-container {
+      max-width: 1100px;
+      margin: 30px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    .event-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+      padding: 20px;
+      border-left: 6px solid #ab47bc;
+    }
+
+    .event-card:hover {
+      transform: scale(1.03);
+    }
+
+    .event-card h3 {
+      color: #6a1b9a;
+      margin-top: 0;
+    }
+
+    .event-card p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 15px;
+      text-align: center;
+      background-color: #6a1b9a;
+      color: white;
+    }
+
+    a.readmore {
+      display: inline-block;
+      margin-top: 10px;
+      color: #4a148c;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    📰 Current Events | Stay Informed with Bibliotech
+  </header>
+
+  <div class="events-container">
+    <!-- Event 1 -->
+    <div class="event-card">
+      <h3>India Becomes World’s 3rd Largest Economy</h3>
+      <p>India overtakes Germany to become the world's 3rd largest economy in nominal GDP terms, driven by robust manufacturing and services sectors.</p>
+      <a href="events/india-economy-3rd.html" class="readmore">Read More →</a>
+    </div>
+
+    <!-- Event 2 -->
+    <div class="event-card">
+      <h3>US Hikes Tariff on Indian Imports to 26%</h3>
+      <p>The United States imposes new tariff barriers on key Indian exports including steel and textiles. A move that may impact bilateral trade relations.</p>
+      <a href="events/us-tariff.html" class="readmore">Read More →</a>
+    </div>
+
+    <!-- Event 3 -->
+    <div class="event-card">
+      <h3>India Signs Global AI Ethics Pact at UN</h3>
+      <p>India joins 40 nations to sign the United Nations' pact ensuring ethical use of AI, promoting transparency and safeguarding digital human rights.</p>
+      <a href="events/india-ai-pact.html" class="readmore">Read More →</a>
+    </div>
+
+    <!-- Event 4 -->
+    <div class="event-card">
+      <h3>Vote From Home Pilot by ECI</h3>
+      <p>The Election Commission of India launches a pilot project allowing senior citizens and differently-abled voters to cast votes from home.</p>
+      <a href="events/vote-from-home.html" class="readmore">Read More →</a>
+    </div>
+
+    <!-- Event 5 -->
+    <div class="event-card">
+      <h3>Environmental Emergency in Delhi NCR</h3>
+      <p>Severe air quality and PM2.5 levels have triggered an environmental emergency in Delhi, prompting shutdowns and red alerts.</p>
+      <a href="events/delhi-emergency.html" class="readmore">Read More →</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Bibliotech | Stay curious, stay updated!
+  </footer>
+
+</body>
+</html>
+<a href="events/india-economy-3rd.html">Read More →</a>
+<a href="events/us-tariff.html">Read More →</a>
+<a href="events/vote-from-home.html">Read More →</a>
+<a href="events/india-ai-pact-details.html">Explore More Insights →</a>
+<a href="events/delhi-emergency.html">Read More →</a>
