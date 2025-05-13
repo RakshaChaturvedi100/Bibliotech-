@@ -1,0 +1,275 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fefefe;
+  color: #222;
+  transition: all 0.3s ease;
+}
+
+.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #003366;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 25px;
+}
+
+.dark-theme .navbar {
+  background-color: #1e1e1e;
+}
+
+.navbar .brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+}
+
+.nav-links li a, .nav-links li button {
+  color: white;
+  background: none;
+  border: none;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Welcome */
+.welcome {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(to right, #e0f7fa, #f3e5f5);
+}
+
+.welcome h1 {
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+.welcome h1 span {
+  color: #003366;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.galaxy-quote {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  background: linear-gradient(to right, #7e57c2, #4fc3f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite alternate;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+@keyframes shine {
+  0% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+/* Feedback */
+.feedback-section {
+  background: #f1f1f1;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.dark-theme .feedback-section {
+  background: #1c1c1c;
+}
+
+.feedback-section input,
+.feedback-section textarea {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.feedback-section button {
+  background-color: #003366;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+.dark-theme footer {
+  background-color: #1e1e1e;
+}
+
+/* Quote Glassy */
+.quote-glassy {
+  margin: 30px auto;
+  max-width: 600px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(128, 0, 128, 0.3);
+  animation: glow-fade 4s infinite alternate;
+}
+
+.quote-glassy p {
+  font-size: 1.3rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #7e57c2, #4fc3f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+@keyframes glow-fade {
+  0% { box-shadow: 0 0 10px rgba(128, 0, 128, 0.2); }
+  100% { box-shadow: 0 0 30px rgba(128, 0, 128, 0.6); }
+}
+
+/* Subjects Page */
+.subjects-section {
+  padding: 50px 20px;
+  text-align: center;
+  background: #f0f8ff;
+}
+
+.dark-theme .subjects-section {
+  background: #181818;
+}
+
+.subjects-section h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #003366;
+}
+
+.subject-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.subject-card {
+  display: inline-block;
+  width: 200px;
+  padding: 20px;
+  background: white;
+  color: #003366;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 2px solid #003366;
+  transition: all 0.3s ease-in-out;
+}
+
+.subject-card:hover {
+  background-color: #003366;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 51, 102, 0.3);
+}
+
+.dark-theme .subject-card {
+  background-color: #333;
+  color: #fff;
+  border-color: #fff;
+}
+
+.dark-theme .subject-card:hover {
+  background-color: #fff;
+  color: #003366;
+}
+
+/* Know the Word */
+.know-word-section {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(to right, #f3e5f5, #e0f7fa);
+}
+
+.know-word-section h1 {
+  font-size: 2rem;
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+.word-search-box {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.word-search-box input {
+  padding: 10px;
+  width: 250px;
+  font-size: 1rem;
+  border: 2px solid #003366;
+  border-radius: 8px;
+}
+
+.word-search-box button {
+  background-color: #003366;
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.meaning-box {
+  margin-top: 30px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.dark-theme .meaning-box {
+  background: #292929;
+  color: #ffffff;
+  border: 1px solid #555;
+}
