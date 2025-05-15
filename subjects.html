@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Subjects | Bibliotech</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #1e1e2f;
+      color: white;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links li a,
+    .nav-links li button {
+      color: white;
+      text-decoration: none;
+      background: none;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .subjects-section {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .subjects-section h1 {
+      margin-bottom: 2rem;
+      font-size: 2.2rem;
+      color: #2a2a2a;
+    }
+
+    .subject-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+      padding: 1rem;
+    }
+
+    .subject-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem;
+      background: linear-gradient(145deg, #ececec, #ffffff);
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #2a2a2a;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .subject-card:hover {
+      transform: translateY(-5px);
+      background: #f5f5f5;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #1e1e2f;
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #8ac6ff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="brand">Bibliotech</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ncert.html">NCERT PDFs</a></li>
+        <li><a href="events.html">Current Events</a></li>
+        <li><a href="knowtheword.html">Know the Word</a></li>
+        <li><button id="theme-toggle">🌙</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="subjects-section">
+    <h1>Explore UPSC Subjects</h1>
+    <div class="subject-grid">
+      <a href="subjects/polity.html" class="subject-card">Polity</a>
+      <a href="subjects/history.html" class="subject-card">History</a>
+      <a href="subjects/economics.html" class="subject-card">Economics</a>
+      <a href="subjects/geography.html" class="subject-card">Geography</a>
+      <a href="subjects/environment.html" class="subject-card">Environment</a>
+      <a href="subjects/philosophy.html" class="subject-card">Philosophy</a>
+      <a href="subjects/ethics.html" class="subject-card">Ethics</a>
+      <a href="subjects/science.html" class="subject-card">Science & Tech</a>
+      <a href="subjects/internal-security.html" class="subject-card">Internal Security</a>
+      <a href="subjects/international.html" class="subject-card">International Relations</a>
+      <a href="subjects/governance.html" class="subject-card">Governance</a>
+      <a href="subjects/essay.html" class="subject-card">Essay</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Contact us: <a href="mailto:info@bibliotech.in">info@bibliotech.in</a> | +91-9999999999</p>
+    <p>© 2025 Bibliotech. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+</body>
+</html>
