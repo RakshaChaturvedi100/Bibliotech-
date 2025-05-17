@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
+}
+
+nav {
+  background-color: #003366;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+nav div {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.word-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f2f2f2;
+}
+
+.word-section h2 {
+  font-size: 28px;
+  color: #003366;
+}
+
+.word-section input {
+  width: 250px;
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.word-section button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: #003366;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#meaningBox {
+  margin-top: 30px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+footer {
+  background-color: #003366;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}
