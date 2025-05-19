@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Know the Word</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #f3e5f5);
+      text-align: center;
+      padding: 50px 20px;
+      color: #003366;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+
+    #wordInput {
+      padding: 10px;
+      width: 60%;
+      max-width: 300px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 2px solid #003366;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-left: 10px;
+      font-size: 16px;
+      background-color: #003366;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 30px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Know the Word</h1>
+  <p>Enter a word to know its meaning in simple language:</p>
+
+  <input type="text" id="wordInput" placeholder="e.g. democracy" />
+  <button onclick="getMeaning()">Get Meaning</button>
+
+  <div id="result"></div>
+
+  <script>
+    async function getMeaning() {
+      const word = document.getElementById("wordInput").value.trim();
+      const resultDiv = document.getElementById("result");
+
+      if (!word) {
+        resultDiv.innerText = "Please enter a word.";
+        return;
+      }
+
+      resultDiv.innerText = "Searching meaning...";
+
+      try {
+        const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
+        const data = await res.json();
+
+        if (data.title === "No Definitions Found") {
+          resultDiv.innerHTML = `<b>${word}</b>: Sorry, no meaning found.`;
+        } else {
+          const definition = data[0].meanings[0].definitions[0].definition;
+          resultDiv.innerHTML = `<b>${word}</b>: ${definition}`;
+        }
+      } catch (err) {
+        resultDiv.innerText = "Something went wrong. Try again.";
+      }
+    }
+  </script>
+
+</body>
+</html>
