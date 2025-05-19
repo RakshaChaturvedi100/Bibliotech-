@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Know the Word</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -19,7 +18,7 @@
       margin-bottom: 20px;
     }
 
-    #wordInput {
+    input {
       padding: 10px;
       width: 60%;
       max-width: 300px;
@@ -47,10 +46,34 @@
       padding: 20px;
       border-radius: 12px;
       max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 30px auto;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
       color: #222;
+    }
+
+    #history {
+      background: #fff;
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      text-align: left;
+    }
+
+    #history h2 {
+      color: #003366;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    #history ul {
+      list-style: decimal;
+      padding-left: 20px;
+    }
+
+    #history li {
+      margin-bottom: 8px;
     }
   </style>
 </head>
@@ -59,15 +82,23 @@
   <h1>Know the Word</h1>
   <p>Enter a word to know its meaning in simple language:</p>
 
-  <input type="text" id="wordInput" placeholder="e.g. democracy" />
+  <input type="text" id="wordInput" placeholder="e.g. empathy" />
   <button onclick="getMeaning()">Get Meaning</button>
 
   <div id="result"></div>
 
+  <div id="history">
+    <h2>Search History:</h2>
+    <ul id="historyList"></ul>
+  </div>
+
   <script>
+    let searchHistory = [];
+
     async function getMeaning() {
       const word = document.getElementById("wordInput").value.trim();
       const resultDiv = document.getElementById("result");
+      const historyList = document.getElementById("historyList");
 
       if (!word) {
         resultDiv.innerText = "Please enter a word.";
@@ -81,14 +112,29 @@
         const data = await res.json();
 
         if (data.title === "No Definitions Found") {
-          resultDiv.innerHTML = `<b>${word}</b>: Sorry, no meaning found.`;
+          resultDiv.innerHTML = `<b>${word}</b>: No meaning found.`;
         } else {
           const definition = data[0].meanings[0].definitions[0].definition;
           resultDiv.innerHTML = `<b>${word}</b>: ${definition}`;
+
+          // Add to search history
+          const entry = `${word} — ${definition}`;
+          searchHistory.unshift(entry); // add on top
+          renderHistory();
         }
       } catch (err) {
         resultDiv.innerText = "Something went wrong. Try again.";
       }
+    }
+
+    function renderHistory() {
+      const historyList = document.getElementById("historyList");
+      historyList.innerHTML = "";
+      searchHistory.slice(0, 10).forEach(item => {
+        const li = document.createElement("li");
+        li.innerText = item;
+        historyList.appendChild(li);
+      });
     }
   </script>
 
