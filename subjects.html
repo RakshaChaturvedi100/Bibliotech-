@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Subjects | Bibliotech</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e3f2fd, #fce4ec);
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background-color: #003366;
+      color: white;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 28px;
+      color: #003366;
+    }
+
+    .subjects-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px;
+      gap: 20px;
+    }
+
+    .subject-card {
+      width: 90%;
+      max-width: 500px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 20px 30px;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .subject-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .subject-card a {
+      text-decoration: none;
+      color: #003366;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div style="font-size: 22px; font-weight: bold;">Bibliotech</div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="ncertpdf.html">NCERT PDFs</a>
+      <a href="currentevents.html">Current Events</a>
+      <a href="knowtheword.html">Know the Word</a>
+    </div>
+  </nav>
+
+  <h2>Select a Subject</h2>
+
+  <div class="subjects-column">
+    <div class="subject-card"><a href="economics.html">Economics</a></div>
+    <div class="subject-card"><a href="polity.html">Polity</a></div>
+    <div class="subject-card"><a href="history.html">History</a></div>
+    <div class="subject-card"><a href="geography.html">Geography</a></div>
+    <div class="subject-card"><a href="science.html">Science</a></div>
+    <div class="subject-card"><a href="english.html">English</a></div>
+    <div class="subject-card"><a href="ethics.html">Ethics</a></div>
+    <div class="subject-card"><a href="philosophy.html">Philosophy</a></div>
+    <div class="subject-card"><a href="sociology.html">Sociology</a></div>
+  </div>
+
+</body>
+</html>
