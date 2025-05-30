@@ -3,97 +3,128 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Economics Assistant | Bibliotech</title>
+  <title>Bibliotech | Economics Assistant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f2f2f2;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #eef2f3, #8e9eab);
       margin: 0;
       padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
     }
 
     .chat-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
       max-width: 800px;
-      margin: 40px auto;
-      background-color: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
+      margin: auto;
     }
 
-    .chat-header {
-      background-color: #003366;
-      color: white;
-      padding: 20px;
-      font-size: 20px;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    .chat-body {
-      padding: 20px;
-      height: 500px;
+    .messages {
+      flex: 1;
       overflow-y: auto;
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      max-height: 70vh;
     }
 
     .message {
       margin-bottom: 15px;
-      line-height: 1.5;
     }
 
     .user {
       text-align: right;
       color: #003366;
+      font-weight: bold;
     }
 
     .bot {
       text-align: left;
-      color: #444;
+      color: #333;
     }
 
-    .chat-input {
+    .input-box {
       display: flex;
-      border-top: 1px solid #ccc;
-      background-color: #fafafa;
+      margin-top: 20px;
     }
 
-    .chat-input input {
-      flex-grow: 1;
-      padding: 15px;
-      border: none;
+    input[type="text"] {
+      flex: 1;
+      padding: 10px;
       font-size: 16px;
-      outline: none;
+      border-radius: 6px;
+      border: 1px solid #ccc;
     }
 
-    .chat-input button {
-      padding: 15px 20px;
+    button {
+      padding: 10px 20px;
       background-color: #003366;
       color: white;
       border: none;
+      border-radius: 6px;
+      margin-left: 10px;
       cursor: pointer;
     }
 
-    .chat-input button:hover {
-      background-color: #002244;
+    footer {
+      background-color: #f2f2f2;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .resource-links a {
+      display: inline-block;
+      margin: 8px 10px;
+      color: #003366;
+      text-decoration: none;
+      font-weight: 500;
     }
   </style>
 </head>
 <body>
+  <header>
+    📚 Economics AI Assistant – Ask Anything, Anytime!
+  </header>
 
   <div class="chat-container">
-    <div class="chat-header">
-      📘 Ask Me Anything about Economics
+    <div class="messages" id="chatMessages">
+      <div class="message bot">👋 Hello! I’m your AI Economics Assistant. Ask me anything related to Economics, UPSC-level or beyond!</div>
     </div>
-    <div class="chat-body" id="chat-body">
-      <div class="message bot">Hi! I’m your Economics AI Assistant. Ask me anything related to Economics 📊</div>
-    </div>
-    <div class="chat-input">
-      <input type="text" id="userInput" placeholder="Type your question here...">
+    <div class="input-box">
+      <input type="text" id="userInput" placeholder="Ask about Inflation, Budget, GDP..." />
       <button onclick="sendMessage()">Send</button>
     </div>
   </div>
 
-  <script src="js/economicsBot.js"></script>
+  <footer>
+    <div><strong>🌐 Recommended Economics Websites:</strong></div>
+    <div class="resource-links">
+      <a href="https://www.rbi.org.in" target="_blank">RBI</a>
+      <a href="https://dea.gov.in" target="_blank">Dept. of Economic Affairs</a>
+      <a href="https://www.mospi.gov.in/" target="_blank">MOSPI</a>
+      <a href="https://www.niti.gov.in/" target="_blank">NITI Aayog</a>
+      <a href="https://www.imf.org/" target="_blank">IMF</a>
+      <a href="https://www.worldbank.org/" target="_blank">World Bank</a>
+      <a href="https://www.economist.com/" target="_blank">The Economist</a>
+    </div>
+  </footer>
 
+  <script src="js/economicsBot.js"></script>
 </body>
 </html>
